@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en"dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>DIGITAL CLOCK JAVASCRIPT</title>
+        <link rel="stylesheet" href="styls.css">
+    </head>
+    <body>
+        <div class="clock">
+            <div class="display">01:28:47 PM</div>
+        </div>
+         
+         <script>
+            setInterval(function(){
+            
+            const clock=document.querySelector(".display");
+            let time=new Date();
+            let sec= time.getSeconds();
+            let min= time.getMinutes();
+            let hr = time.getHours();
+            let day= 'AM';
+            if(hr > 12){
+                day='PM';
+                hr=hr-12;
+
+            }
+            if(hr==0){
+                hr=12;
+            }
+            if(sec<10){
+                sec='0' + sec;
+            }
+            if(min<10){
+                sec='0' + min;
+            }
+            if(hr<10){
+                sec='0' + hr;
+            }
+            clock.textContent = hr + ':' + min + ':'+ sec + " " + day;});
+            
+         </script>
+
+
+    </body>
+    <style>
+    </style>
+</html>
